@@ -4,85 +4,66 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-/* Definition of the design system - Dark, warm restaurant theme */
+/* Stunning restaurant design system */
 
 @layer base {
   :root {
-    --background: 222 47% 8%;
-    --foreground: 38 40% 92%;
+    --background: 20 14% 4%;
+    --foreground: 38 35% 95%;
 
-    --card: 222 40% 12%;
-    --card-foreground: 38 40% 92%;
+    --card: 20 20% 8%;
+    --card-foreground: 38 35% 95%;
 
-    --popover: 222 40% 12%;
-    --popover-foreground: 38 40% 92%;
+    --popover: 20 20% 8%;
+    --popover-foreground: 38 35% 95%;
 
-    --primary: 28 90% 55%;
-    --primary-foreground: 222 47% 8%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 14% 4%;
 
-    --secondary: 222 30% 18%;
-    --secondary-foreground: 38 40% 92%;
+    --secondary: 20 15% 12%;
+    --secondary-foreground: 38 35% 95%;
 
-    --muted: 222 30% 15%;
-    --muted-foreground: 220 15% 55%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 20 10% 55%;
 
-    --accent: 28 90% 55%;
-    --accent-foreground: 222 47% 8%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 20 14% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 30% 20%;
-    --input: 222 30% 18%;
-    --ring: 28 90% 55%;
+    --border: 20 15% 18%;
+    --input: 20 15% 15%;
+    --ring: 24 95% 53%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 38 40% 92%;
-    --sidebar-primary: 28 90% 55%;
-    --sidebar-primary-foreground: 222 47% 8%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 38 40% 92%;
-    --sidebar-border: 222 30% 20%;
-    --sidebar-ring: 28 90% 55%;
+    --radius: 0.75rem;
 
     /* Custom tokens */
-    --warm-gold: 38 70% 70%;
-    --warm-cream: 38 40% 92%;
-    --deep-navy: 222 47% 8%;
-    --flame-orange: 28 90% 55%;
-    --flame-red: 8 85% 50%;
+    --warm-gold: 45 80% 65%;
+    --cream: 40 40% 92%;
+    --zomato-red: 0 80% 50%;
   }
 
   .dark {
-    --background: 222 47% 8%;
-    --foreground: 38 40% 92%;
-    --card: 222 40% 12%;
-    --card-foreground: 38 40% 92%;
-    --popover: 222 40% 12%;
-    --popover-foreground: 38 40% 92%;
-    --primary: 28 90% 55%;
-    --primary-foreground: 222 47% 8%;
-    --secondary: 222 30% 18%;
-    --secondary-foreground: 38 40% 92%;
-    --muted: 222 30% 15%;
-    --muted-foreground: 220 15% 55%;
-    --accent: 28 90% 55%;
-    --accent-foreground: 222 47% 8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 20%;
-    --input: 222 30% 18%;
-    --ring: 28 90% 55%;
-    --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 38 40% 92%;
-    --sidebar-primary: 28 90% 55%;
-    --sidebar-primary-foreground: 222 47% 8%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 38 40% 92%;
-    --sidebar-border: 222 30% 20%;
-    --sidebar-ring: 28 90% 55%;
+    --background: 20 14% 4%;
+    --foreground: 38 35% 95%;
+    --card: 20 20% 8%;
+    --card-foreground: 38 35% 95%;
+    --popover: 20 20% 8%;
+    --popover-foreground: 38 35% 95%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 20 14% 4%;
+    --secondary: 20 15% 12%;
+    --secondary-foreground: 38 35% 95%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 20 10% 55%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 20 14% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 15% 18%;
+    --input: 20 15% 15%;
+    --ring: 24 95% 53%;
   }
 }
 
@@ -92,7 +73,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
 
@@ -102,42 +83,74 @@
 }
 
 @layer components {
-  .menu-card {
-    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;
-  }
-  
-  .menu-card:hover {
-    @apply border-primary/50 shadow-lg shadow-primary/10;
-    transform: translateY(-2px);
-  }
-
   .section-title {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply text-4xl md:text-5xl font-semibold tracking-tight text-center;
     font-family: 'Playfair Display', serif;
   }
 
-  .subtle-glow {
-    text-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  .section-subtitle {
+    @apply text-muted-foreground text-lg text-center mt-4 max-w-md mx-auto;
   }
 
-  .input-field {
-    @apply bg-secondary border-border focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200;
+  .menu-item {
+    @apply bg-card/50 backdrop-blur border border-border/50 rounded-xl p-5 transition-all duration-300;
+  }
+
+  .menu-item:hover {
+    @apply border-primary/40 bg-card shadow-xl shadow-primary/5;
+    transform: translateY(-4px);
+  }
+
+  .photo-card {
+    @apply rounded-2xl overflow-hidden aspect-square;
+  }
+
+  .review-card {
+    @apply bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl p-6 backdrop-blur;
+  }
+
+  .badge-zomato {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+    background: hsl(var(--zomato-red));
+    color: white;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 60px hsl(var(--primary) / 0.4);
+  }
+
+  .gradient-border {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.3), transparent);
   }
 }
 
 @layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
   }
 
-  @keyframes fadeUp {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 }

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -11,12 +12,11 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message sent!",
+        title: "Message sent! 🎉",
         description: "We'll get back to you soon.",
       });
       (e.target as HTMLFormElement).reset();
@@ -24,55 +24,56 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8 border-t border-border">
-      <div className="max-w-md mx-auto">
-        <h2 className="section-title text-center mb-4 subtle-glow">Get in Touch</h2>
-        <p className="text-center text-muted-foreground mb-10">
+    <section id="contact" className="py-24 px-4 md:px-8">
+      <div className="max-w-lg mx-auto">
+        <h2 className="section-title glow-text">Get in Touch</h2>
+        <p className="section-subtitle mb-12">
           Have a question? We'd love to hear from you.
         </p>
-        
+
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <Input 
-              type="text" 
-              placeholder="Your Name" 
-              required 
+          <div className="grid md:grid-cols-2 gap-4">
+            <Input
+              type="text"
+              placeholder="Your Name"
+              required
               maxLength={100}
-              className="input-field"
+              className="bg-secondary/50 border-border/50 focus:border-primary h-12 rounded-xl"
             />
-          </div>
-          <div>
-            <Input 
-              type="email" 
-              placeholder="Your Email" 
-              required 
-              maxLength={255}
-              className="input-field"
-            />
-          </div>
-          <div>
-            <Input 
-              type="tel" 
-              placeholder="Phone Number" 
+            <Input
+              type="tel"
+              placeholder="Phone Number"
               maxLength={15}
-              className="input-field"
+              className="bg-secondary/50 border-border/50 focus:border-primary h-12 rounded-xl"
             />
           </div>
-          <div>
-            <Textarea 
-              placeholder="Your Message" 
-              required 
-              maxLength={1000}
-              rows={4}
-              className="input-field resize-none"
-            />
-          </div>
-          <Button 
-            type="submit" 
-            className="w-full font-medium"
+          <Input
+            type="email"
+            placeholder="Your Email"
+            required
+            maxLength={255}
+            className="bg-secondary/50 border-border/50 focus:border-primary h-12 rounded-xl"
+          />
+          <Textarea
+            placeholder="Your Message"
+            required
+            maxLength={1000}
+            rows={5}
+            className="bg-secondary/50 border-border/50 focus:border-primary resize-none rounded-xl"
+          />
+          <Button
+            type="submit"
+            className="w-full h-12 text-base font-medium rounded-xl"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? (
+              "Sending..."
+            ) : (
+              <>
+                Send Message
+                <Send className="w-4 h-4 ml-2" />
+              </>
+            )}
           </Button>
         </form>
       </div>
